@@ -48,7 +48,7 @@ $up_general_header_cta_url = $up_general_header_cta['url'] ?? false;
 </head>
 <body class="<?php echo implode(' ', $body_classes) ?>">
 <header class="header">
-  <<div class="header-top">
+  <div class="header-top">
     <div class="container big">
       <div>
 <!--        <p>-->
