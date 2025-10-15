@@ -19,6 +19,24 @@
  * @package WordPress
  */
 
+ // $_SERVER['HTTPS']='on';
+
+ define('WP_HOME','http://159.203.111.152/');
+ define('WP_SITEURL','http://159.203.111.152/');
+
+ define('RELOCATE',true);
+
+ define('WP_MEMORY_LIMIT', '256M');
+
+ define( 'AS3CF_SETTINGS', serialize( array(
+     'provider' => 'do',
+     'access-key-id' => 'DW436QBNUYCSRI5ZNHHT',
+     'secret-access-key' => '7o/DbutryqcWIoWgYehU0Pv86NqzioxJMlqPsA/wFEc'
+ ) ) );
+
+ /** Enable W3 Total Cache */
+ define('WP_CACHE', true); // Added by W3 Total Cache
+
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define( 'DB_NAME', 'wp-mct-2026' );
