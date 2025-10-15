@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeria Interativa</title>
+  <style>
+    body {
+      margin: 0; /* Remove margens padrão */
+      background-color: #000; /* Fundo preto para consistência */
+      min-height: 100vh; /* Ocupa toda a altura da viewport */
+      display: flex; /* Centraliza horizontalmente */
+      justify-content: center;
+      padding: 20px 0; /* Espaçamento vertical */
+    }
+
+    .gallery-wrapper {
+      width: 100%; /* Ocupa toda a largura disponível */
+      max-width: none; /* Remove limite de largura */
+      overflow-x: auto; /* Rolagem horizontal nativa */
+      overflow-y: hidden;
+      scroll-behavior: smooth; /* Rolagem suave nativa */
+      -webkit-overflow-scrolling: touch; /* Suporte a toque em mobile */
+      cursor: grab;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-rows: repeat(2, 418px);
+      grid-auto-flow: column;
+      gap: 20px;
+      padding: 0 20px; /* Padding horizontal para evitar colar na borda */
+      align-items: center;
+    }
+
+    .gallery-item {
+      width: 418px;
+      height: 418px;
+      border-radius: 50%;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.1);
+      z-index: 1;
+    }
+
+    .gallery-item:hover::after {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-item {
+        width: 120px;
+        height: 120px;
+      }
+      .gallery {
+        grid-template-rows: repeat(2, 120px);
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="gallery-wrapper">
+  <div class="gallery">
+    <div class="gallery-item"><img src="https://placehold.co/418x418?text=Img1" alt="Image 1"></div>
+    <div class="gallery-item"><img src="https://placehold.co/418x418?text=Img2" alt="Image 2"></div>
+    <div class="gallery-item"><img src="https://placehold.co/418x418?text=Img3" alt="Image 3"></div>
+    <div class="gallery-item"><img src="https://placehold.co/418x418?text=Img4" alt="Image 4"></div>
+    <div class="gallery-item"><img src="https://placehold.co/418x418?text=Img5" alt="Image 5"></div>
+    <div class="gallery-item"><img src="https://placehold.co/418x418?text=Img6" alt="Image 6"></div>
+    <div class="gallery-item"><img src="https://placehold.co/418x418?text=Img7" alt="Image 7"></div>
+    <div class="gallery-item"><img src="https://placehold.co/418x418?text=Img8" alt="Image 8"></div>
+    <div class="gallery-item"><img src="https://placehold.co/418x418?text=Img9" alt="Image 9"></div>
+    <div class="gallery-item"><img src="https://placehold.co/418x418?text=Img10" alt="Image 10"></div>
+    <div class="gallery-item"><img src="https://placehold.co/418x418?text=Img11" alt="Image 11"></div>
+    <div class="gallery-item"><img src="https://placehold.co/418x418?text=Img12" alt="Image 12"></div>
+    <div class="gallery-item"><img src="https://placehold.co/418x418?text=Img13" alt="Image 13"></div>
+    <div class="gallery-item"><img src="https://placehold.co/418x418?text=Img14" alt="Image 14"></div>
+    <div class="gallery-item"><img src="https://placehold.co/418x418?text=Img15" alt="Image 15"></div>
+    <div class="gallery-item"><img src="https://placehold.co/418x418?text=Img16" alt="Image 16"></div>
+    <div class="gallery-item"><img src="https://placehold.co/418x418?text=Img17" alt="Image 17"></div>
+    <div class="gallery-item"><img src="https://placehold.co/418x418?text=Img18" alt="Image 18"></div>
+  </div>
+</div>
+
+<script>
+    const galleryWrapper = document.querySelector('.gallery-wrapper');
+
+    let isDragging = false;
+    let startX;
+    let scrollLeft;
+
+    galleryWrapper.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        galleryWrapper.style.cursor = 'grabbing';
+        startX = e.pageX - galleryWrapper.getBoundingClientRect().left;
+        scrollLeft = galleryWrapper.scrollLeft;
+    });
+
+    galleryWrapper.addEventListener('mouseleave', () => {
+        isDragging = false;
+        galleryWrapper.style.cursor = 'grab';
+    });
+
+    galleryWrapper.addEventListener('mouseup', () => {
+        isDragging = false;
+        galleryWrapper.style.cursor = 'grab';
+    });
+
+    galleryWrapper.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - galleryWrapper.getBoundingClientRect().left;
+        const walk = (x - startX) * 2; // Ajuste da velocidade de rolagem
+        galleryWrapper.scrollLeft = scrollLeft - walk;
+    });
+
+    galleryWrapper.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        startX = e.touches[0].pageX - galleryWrapper.getBoundingClientRect().left;
+        scrollLeft = galleryWrapper.scrollLeft;
+    });
+
+    galleryWrapper.addEventListener('touchend', () => {
+        isDragging = false;
+    });
+
+    galleryWrapper.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const x = e.touches[0].pageX - galleryWrapper.getBoundingClientRect().left;
+        const walk = (x - startX) * 2;
+        galleryWrapper.scrollLeft = scrollLeft - walk;
+    });
+</script>
+</body>
+</html>

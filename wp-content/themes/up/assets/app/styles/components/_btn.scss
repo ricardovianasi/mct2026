@@ -1,0 +1,36 @@
+%btn {
+  align-items: center;
+  border-radius: 4px 24px 24px 24px;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 140%;
+  padding: 10px 32px 8px;
+  position: relative;
+  text-transform: uppercase;
+  transition: $transition-quick;
+}
+
+.btn-red {
+  @extend %btn;
+  background-color: $red;
+  color: #fff;
+}
+
+.btn-link {
+  align-items: center;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 700;
+  gap: 10px;
+  line-height: 140%;
+  text-transform: uppercase;
+
+  i {
+    font-size: 12px;
+  }
+
+  &.red {
+    color: $red;
+  }
+}

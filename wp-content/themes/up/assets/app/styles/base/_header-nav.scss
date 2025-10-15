@@ -1,0 +1,258 @@
+.header-nav {
+  background-color: $blue;
+  border-radius: 0 32px 32px;
+  margin-bottom: 60px;
+  position: relative;
+
+  @include media('<=1023px') {
+    display: none;
+    background-color: $orange;
+    background-image: url('../images/menu-bgc.webp');
+    background-blend-mode: multiply;
+    height: calc(100vh - 32px);
+    left: $container-padding;
+    margin-bottom: 0;
+    position: absolute;
+    top: $container-padding;
+    width: calc(100% - 32px);
+    z-index: 1002;
+
+    &::before {
+      background-color: #000;
+      border-radius: 0 32px 32px;
+      content: '';
+      height: 100%;
+      opacity: .7;
+      position: absolute;
+      width: 100%;
+    }
+  }
+
+  .container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  nav,
+  .mainmenu,
+  ul,
+  li,
+  a {
+    display: flex;
+    position: relative;
+  }
+
+  .mainmenu {
+    align-items: center;
+    gap: 32px;
+    justify-content: center;
+    width: 100%;
+
+    @include media('<=1023px') {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    > li {
+      flex-direction: column;
+      transition: all 0.1s ease-in-out 0s;
+
+      &:hover,
+      &.menu-item-has-children:hover,
+      &.current-menu-ancestor,
+      &.current-menu-item {
+        transition-delay: 0s, 0s, 0.3s;
+
+        .submenu-link {
+          transform: rotate(180deg);
+        }
+      }
+
+      &.menu-item-has-children:hover {
+        ul.sub-menu {
+          @include media('>=1024px') {
+            height: auto;
+            opacity: 1;
+            transition-delay: 0s, 0s, 0.3s;
+            visibility: visible;
+            z-index: 1000000;
+          }
+        }
+      }
+
+      > a {
+        padding: 18px 0;
+
+        @include media('<=1023px') {
+          padding: 8px 10px;
+        }
+      }
+    }
+  }
+
+  .submenu-link {
+    line-height: 0;
+    margin-left: 6px;
+    margin-right: 6px;
+    transition: transform 0.3s linear;
+
+    b {
+      font-size: 6px;
+    }
+  }
+
+  li {
+    @include media('<=1023px') {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &:hover,
+    &.menu-item-has-children:hover,
+    &.current-menu-ancestor,
+    &.current-menu-item {
+      > a {
+        color: $red;
+      }
+    }
+  }
+
+  a {
+    align-items: center;
+    color: #1E1E1E;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 160%;
+    text-transform: uppercase;
+
+    @include media('<=1023px') {
+      color: #fff;
+    }
+  }
+
+  .sub-menu {
+    background-color: $blue;
+    border-radius: 0 18px 18px 18px;
+    flex-direction: column;
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+    transform: translate(-50%, 0%);
+    top: calc(100% + 8px);
+    width: 250px;
+    z-index: 1000000;
+
+    @include media('<=1024px') {
+      background-color: rgba( 0, 0, 0, .7);
+      display: none;
+      position: relative;
+      transform: none;
+      opacity: 1;
+      visibility: visible;
+      width: 100%;
+      left: unset;
+      border-radius: 0;
+      top: 0;
+    }
+
+    li {
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      transition: $transition-quick;
+      text-align: center;
+
+      a {
+        text-align: center;
+        padding: 12px 18px;
+
+        @include media('<=1023px') {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.hamburger-menu {
+  align-self: flex-end;
+  background: $blue;
+  border-radius: 18px 18px 18px 2px;
+  cursor: pointer;
+  display: none;
+  margin: $container-padding;
+  padding: 10px;
+  position: relative;
+  z-index: 1001;
+
+  @include media('<=1023px') {
+    display: block;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 24px;
+    justify-content: center;
+    position: relative;
+    width: 30px;
+
+    .line {
+      background-color: $black-bgc;
+      border-radius: 2px;
+      height: 3px;
+      transition: all 0.3s ease;
+      width: 100%;
+      transform-origin: center center;
+    }
+  }
+}
+
+// Animation when menu is active
+html.mainmenu-active {
+
+  &,
+  body {
+    overflow: hidden;
+    height: 100%;
+  }
+
+  #overflow {
+    display: block;
+    visibility: visible;
+  }
+
+  .header-nav {
+    display: block;
+  }
+
+  .hamburger-menu {
+    background-color: $orange;
+
+    .line {
+      background-color: #fff;
+    }
+  }
+
+  .menu-toggle .hamburger {
+    .line {
+      &:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      &:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+    }
+  }
+}

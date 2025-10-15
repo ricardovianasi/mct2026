@@ -1,0 +1,24 @@
+# dependencies
+node_modules
+bower_components
+
+# compiled output
+assets/.tmp
+/.tmp
+
+# System Files
+.DS_Store
+Thumbs.db
+.babelrc
+.editorconfig
+.gitattributes
+.yo-rc.json
+.idea
+
+# Wordpress config file
+wp-config.php
+
+# Wordpress uploads dir
+wp-content/uploads/*
+
+/.htaccess

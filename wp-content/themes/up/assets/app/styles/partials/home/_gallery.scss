@@ -1,0 +1,108 @@
+.gallery {
+  margin-top: 80px;
+
+  .home-title {
+    margin-bottom: 44px;
+
+    @include media('<=768px') {
+      margin-bottom: 20px;
+    }
+  }
+
+  &-container {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    //min-height: 100vh;
+    padding: 20px 0;
+  }
+
+  &-wrapper {
+    max-width: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 36px 0;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+    user-select: none;
+    white-space: nowrap;
+    
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+      
+      &:hover {
+        background: rgba(0, 0, 0, 0.5);
+      }
+    }
+    
+    &.dragging {
+      cursor: grabbing;
+      scroll-behavior: auto;
+      
+      .gallery-item {
+        pointer-events: none;
+      }
+    }
+  }
+
+  &-items {
+    align-items: center;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, 418px);
+    gap: 40px;
+
+    @include media('<=768px') {
+      grid-template-rows: repeat(2, 120px);
+      gap: 12px;
+    }
+  }
+
+  &-item {
+    border-radius: 50%;
+    height: 418px;
+    overflow: hidden;
+    position: relative;
+    width: 418px;
+    transition: transform 0.3s ease, margin 0.3s ease;
+
+    @include media('<=768px') {
+      height: 120px;
+      width: 120px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      z-index: 1;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        border-radius: 50%;
+        z-index: -1;
+      }
+    }
+
+    img {
+      border-radius: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+@mixin expand {
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  left: 50%;
+  right: 50%;
+}
+
+.expanded {
+  @include expand;
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin absolutely($width:100%, $height:100%, $top:0, $left:0) {
+  content: '';
+  height: $height;
+  left: $left;
+  position: absolute;
+  top: $top;
+  width: $width;
+}
+
+@mixin cube($rightColor:#000, $bottomColor:#000) {
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+  }
+
+  // right
+  &::after {
+    background-color: #{$rightColor};
+    //clip-path: polygon(0 0, 100% 4%, 100% 100%, 0 96%);
+    clip-path: polygon(0 0, 100% 18px, 100% 100%, 0 calc(100% - 18px));
+    height: 100%;
+    right: 0;
+    top: 0;
+    width: 17px;
+  }
+
+  // bottom
+  &::before {
+    background-color: #{$bottomColor};
+    clip-path: polygon(0 0, 96% 0, 100% 100%, 4% 100%);
+    bottom: 0;
+    height: 17px;
+    width: 100%;
+  }
+}

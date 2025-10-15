@@ -1,0 +1,163 @@
+.footer {
+  background-color: $orange;
+  background-blend-mode: multiply;
+  background-image: url('../images/footer-bgc.webp');
+  background-position: center;
+  background-size: cover;
+  border-radius: 280px 280px 48px 48px;
+  margin-top: 160px;
+  margin-bottom: 24px;
+  position: relative;
+
+  @include media('<=768px') {
+    border-radius: 0;
+    margin-bottom: 0;
+    margin-top: 48px;
+  }
+
+  & > .copy {
+    padding: 0 $container-padding;
+    padding-bottom: 24px;
+
+    @include media('>768px') {
+      display: none;
+    }
+  }
+
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 32px;
+    position: relative;
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+    @include media('<=768px') {
+      flex-direction: column;
+      gap: 24px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+    }
+
+    .footer-drop.active {
+      color: $black-bgc;
+
+      .drop {
+        opacity: 1;
+      }
+    }
+
+    > div:first-child {
+      padding-right: 80px;
+
+      h2,
+      .address {
+        position: relative;
+        z-index: 10;
+      }
+    }
+
+    > div:last-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+
+      .social {
+        order: 10;
+      }
+
+      .copy {
+        display: none;
+      }
+    }
+  }
+  
+  &-drop {
+    @include media('<=768px') {
+      order: 10;
+      padding: 12px 0;
+      position: relative;
+    }
+  }
+
+  .drop {
+    background-color: $blue;
+    border-radius: 280px 280px 280px 48px;
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    opacity: 0;
+
+    @include media('<=768px') {
+      border-radius: 60px 60px 60px 4px;
+    }
+  }
+
+  .logo-up {
+    font-size: 117px;
+
+    @include media('<=768px') {
+      font-size: 60px;
+    }
+  }
+
+  .logo-mct {
+    font-size: 200px;
+
+    @include media('<=768px') {
+      font-size: 90px;
+    }
+  }
+
+  .address {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 50px;
+
+    @include media('<=768px') {
+      margin-top: 12px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .social {
+    strong {
+      font-size: 14px;
+      line-height: 150%;
+    }
+
+    ul {
+      gap: 20px;
+    }
+
+    a {
+      font-size: 28px;
+    }
+  }
+
+  .slogan {
+    h3 {
+      font-size: 24px;
+      line-height: 140%;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+
+      @include media('<=768px') {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .copy {
+    font-size: 14px;
+    line-height: 150%;
+  }
+}

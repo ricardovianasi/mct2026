@@ -1,0 +1,13 @@
+#overflow {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100vh;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  display: none;
+  visibility: hidden;
+}

@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+  position: relative;
+  width: 100%;
+
+  &.big {
+    max-width: 1440px;
+  }
+
+  &,
+  &.medium {
+    max-width: 1196px;
+  }
+
+  &.small {
+    max-width: 952px;
+  }
+}

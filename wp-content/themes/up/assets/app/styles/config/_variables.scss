@@ -1,0 +1,37 @@
+$orange: #D66F3C;
+$blue: #96CBDB;
+$red: #CF5342;
+$yellow: #EECC54;
+
+
+$white: #fff;
+$black: #000;
+
+$black-bgc: #1E1E1E;
+
+$text-color: $black-bgc;
+
+// Container
+$container-padding: 16px;
+
+//
+// Transitions
+//
+$transition-default:
+  all 200ms linear,
+  z-index 0ms,
+  display 0ms;
+$transition-quick:
+  all 100ms linear,
+  z-index 0ms,
+  display 0ms;
+$transition-lazy:
+  all 250ms linear,
+  z-index 0ms,
+  display 0ms;
+$transition-default-with-delay:
+  all 200ms linear 200ms,
+  z-index 0ms,
+  display 0ms;
+$transition-opacity: opacity 0.2s ease;
+$transition: all 300ms ease;

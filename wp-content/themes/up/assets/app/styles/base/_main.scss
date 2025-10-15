@@ -1,0 +1,143 @@
+.main {
+  min-height: 600px;
+
+  &-header {
+    position: relative;
+
+    &-bg {
+      display: flex;
+      height: 486px;
+      margin-top: 72px;
+      position: relative;
+
+      @include media('<=768px') {
+        height: 240px;
+      }
+
+      .container {
+        flex-direction: column;
+
+        &::after {
+          background: linear-gradient(0deg, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.00) 49.84%);
+          content: '';
+          left: $container-padding;
+          height: 100%;
+          position: absolute;
+          width: 100%;
+          top: 0;
+        }
+      }
+
+      figure,
+      img {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+      }
+
+      figure {
+        position: absolute;
+      }
+
+      img {
+        object-fit: cover;
+      }
+
+      .main-header-title {
+        color: #fff;
+        margin-top: auto;
+        margin-bottom: 0;
+        padding: 54px;
+        z-index: 10;
+
+        @include media('<=768px') {
+          padding: 32px 0;
+        }
+      }
+    }
+  }
+
+  &-header-title {
+    margin-top: 64px;
+
+    @include media('<=768px') {
+      margin-top: 40px;
+    }
+  }
+
+  &-content {
+    margin-top: 64px;
+
+
+    @include media('<=768px') {
+      margin-top: 32px;
+    }
+
+    .container-948 {
+      margin: 0 auto;
+    }
+
+
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 160%;
+      margin-top: 2em;
+
+      @include media('<=768px') {
+        margin-top: 1em;
+      }
+    }
+
+    h1, .heading-h1,
+    h2, .heading-h2,
+    h3, .heading-h3,
+    h4, .heading-h4,
+    h5, .heading-h5,
+    h6, .heading-h6 {
+      margin-bottom: 16px;
+      margin-top: 1em;
+    }
+
+    em, i {
+      font-style: italic;
+    }
+
+    b, strong {
+      font-weight: bold;
+    }
+
+    ol,ul {
+      list-style: inherit;
+      margin-left: 16px
+    }
+  }
+
+  &-header-subtitle {
+    margin-bottom: 64px;
+
+    @include media('<=768px') {
+      margin-top: 32px;
+    }
+
+    h2 {
+      font-size: 30px;
+      font-weight: 600;
+      margin: 0 0 24px;
+    }
+
+    span {
+      display: block;
+      color: #838383;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 28.8px;
+      text-align: left;
+      margin-top: 24px;
+
+      @include media('<=768px') {
+        margin-top: 16px;
+      }
+    }
+  }
+}

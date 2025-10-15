@@ -1,0 +1,15 @@
+.news {
+  margin-top: 80px;
+
+  @include media('<=768px') {
+    margin-top: 40px;
+  }
+
+  &-wrapper {
+    margin-bottom: 32px;
+  }
+
+  .read-more {
+    align-self: flex-end;
+  }
+}

@@ -1,0 +1,23 @@
+.home {
+  .home-title {
+    font-size: 64px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    margin-bottom: 80px;
+    margin-left: 100px;
+    text-transform: uppercase;
+
+    @include media('<=768px') {
+      font-size: 48px;
+      margin-bottom: 32px;
+      margin-left: 0;
+    }
+  }
+
+  @import "banner";
+  @import "intro";
+  @import "tv";
+  @import "news";
+  @import "gallery";
+  @import "partners";
+}
