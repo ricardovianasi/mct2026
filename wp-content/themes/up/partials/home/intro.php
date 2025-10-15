@@ -14,7 +14,7 @@ if (!empty($up_home_introduction['up_home_introduction_enabled'])):
         <div class="left">
           <?php echo wp_get_attachment_image($up_home_introduction_img['ID'], 'intro_gallery') ?>
         </div>
-      <?php endif; ?> ?>
+      <?php endif; ?>
       <div class="right">
         <div class="desc">
           <?php echo $up_home_introduction_text ?>
