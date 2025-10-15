@@ -49,7 +49,7 @@ if( !function_exists('template_setup')):
     add_image_size( 'banner_desktop_size', 1244, 700, true);
     add_image_size( 'banner_mobile_size', 624, 368, true);
 	  
-	  add_image_size( 'intro_gallery', 800, 452, true);
+	  add_image_size( 'intro_gallery', 800, 600, false);
 
     // Thematic
     add_image_size( 'thematic', 740, 500, true);
