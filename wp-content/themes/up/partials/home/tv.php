@@ -38,40 +38,20 @@ foreach ($homeTvItems as $tv) {
 
 if ($homeTvItemsRendered): ?>
   <div class="tv">
-    <h2 class="home-title">
-      <?php echo $homeTvTitle; ?></h2>
-    <div class="tv-wrapper flex">
-      <div class="left"><?php
-        echo $homeTvItemsRendered[0];
-        unset($homeTvItemsRendered[0]);
-        ?></div>
-      <div class="right">
-        <?php echo implode('', $homeTvItemsRendered); ?>
-        <a class="btn-white with-decorator red" rel="noopener" target="_blank"
-           href="http://www.youtube.com/user/universoproducao?sub_confirmation=1">
-          <?php echo $homeBtnLabel ?></a>
-      </div>
-      <div class="id">
-        <svg
-          width="1920"
-          height="396"
-          viewBox="0 0 1920 396"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g clip-path="url(#clip0_4165_103)">
-            <path
-              d="M-93 183.505C-69.6667 128.171 41.4 19.7047 299 28.5047C621 39.5047 613.5 180.005 920.5 320.505C1227.5 461.005 1394 213.005 1575 209.505C1756 206.005 2029.5 431.005 2048 520.005"
-              stroke="#E32F46"
-              stroke-width="20"
-            />
-          </g>
-          <defs>
-            <clipPath id="clip0_4165_103">
-              <rect width="1920" height="396" fill="white" />
-            </clipPath>
-          </defs>
-        </svg>
+    <div class="container big">
+      <h2 class="home-title">
+        <?php echo $homeTvTitle; ?></h2>
+      <div class="tv-wrapper flex">
+        <div class="left"><?php
+          echo $homeTvItemsRendered[0];
+          unset($homeTvItemsRendered[0]);
+          ?></div>
+        <div class="right">
+          <?php echo implode('', $homeTvItemsRendered); ?>
+          <a class="btn-red" rel="noopener" target="_blank"
+             href="http://www.youtube.com/user/universoproducao?sub_confirmation=1">
+            <?php echo $homeBtnLabel ?></a>
+        </div>
       </div>
     </div>
   </div>

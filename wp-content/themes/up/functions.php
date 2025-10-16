@@ -60,7 +60,7 @@ if( !function_exists('template_setup')):
     add_image_size( 'tv', 592, 333, true);
 
     // Gallery
-    add_image_size( 'gallery', 600, 360, true);
+    add_image_size( 'gallery', 600, 600, true);
 
     // Debate
     add_image_size( 'debate', 416, 624, true);

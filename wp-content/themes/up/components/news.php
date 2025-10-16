@@ -75,13 +75,14 @@ class News_Shortcode {
             <span class="btn-short-cta"><i class="icon-arrow-right"></i></span>
           </figure>
           <span class="content">
+            <span class="title"><?php echo get_the_title($news) ?></span>
             <span class="heading flex">
               <span><?php echo $post_date ?></span>
               <?php if (!$home): ?>
-                <span class="read-more"><?php echo __('Saiba Mais', 'up')?> <i class="icon-arrow-right-2"></i></span>
+                <span class="btn-link red"><?php echo __('Saiba Mais', 'up')?> <i class="icon-arrow-right-2"></i></span>
               <?php endif; ?>
             </span>
-            <span class="title"><?php echo get_the_title($news) ?></span>
+
           </span>
         </a>
       </div>

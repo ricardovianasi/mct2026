@@ -2,7 +2,7 @@
 $home_brands_img = get_field('up_home_brands', 'option');
 if($home_brands_img): ?>
   <div class="partners " aria-hidden="true">
-    <div class="container container-medium">
+    <div class="container big">
       <div class="">
         <img
           src="<?php echo $home_brands_img['url'] ?>"
