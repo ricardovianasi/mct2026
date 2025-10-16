@@ -17,8 +17,10 @@ if($gallery_items):
       <div class="gallery-wrapper">
         <div class="gallery-items">
           <?php foreach ($gallery_items as $key => $img): ?>
-            <a data-fancybox="gallery" href="<?php echo wp_get_attachment_image_url($img['ID'], 'full') ?>">
-              <?php echo wp_get_attachment_image($img['ID'], 'gallery') ?></a>
+            <div class="gallery-item">
+              <a data-fancybox="gallery" href="<?php echo wp_get_attachment_image_url($img['ID'], 'full') ?>">
+                <?php echo wp_get_attachment_image($img['ID'], 'gallery') ?></a>
+            </div>
           <?php endforeach; ?>
         </div>
       </div>
