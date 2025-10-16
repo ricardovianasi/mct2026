@@ -26,8 +26,10 @@ if($gallery_items):
       </div>
     </div>
 
-    <a class="btn-red with-decorator black" target="_blank" href="https://www.flickr.com/photos/universoproducao">
-      <?php echo __('Visite nosso Flickr', 'up')?></a>
+    <div class="container big read-more">
+      <a class="btn-red with-decorator black" target="_blank" href="https://www.flickr.com/photos/universoproducao">
+        <?php echo __('Visite nosso Flickr', 'up')?></a>
+    </div>
 
   </div>
 <?php endif;
