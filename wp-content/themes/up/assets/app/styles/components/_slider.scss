@@ -13,6 +13,19 @@
       background: $red;
     }
   }
+
+  &.white {
+    .slider-button-prev,
+    .slider-button-next {
+      background: #fff;
+      color: $red;
+    }
+
+    .slider-pagination .swiper-pagination-bullet {
+      background: #fff;
+      color: $red;
+    }
+  }
 }
 
 .slider-pagination {

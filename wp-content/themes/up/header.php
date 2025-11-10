@@ -49,20 +49,13 @@ $up_general_header_cta_url = $up_general_header_cta['url'] ?? false;
 <body class="<?php echo implode(' ', $body_classes) ?>">
 <header class="header">
   <div class="header-top">
-    <div class="container big">
-      <div>
-<!--        <p>-->
-<!--          <strong>Ministério da Cultura e Governo de Minas Gerais</strong> apresentam:-->
-<!--        </p>-->
-      </div>
-      <div><h1><a href="/" title="29ª Mostra de Cinema de Tiradentes"><span class="icon-mct-2026"></span></a></h1></div>
-      <div>
-        <p>
-          <strong>23 - 31 JAN 2026</strong> <br>
-          <strong>PROGRAMAÇÃO GRATUITA</strong>
-        </p>
-      </div>
-    </div>
+    <h1>
+      <a href="/">
+        <img class="desktop hidden md:block" src="<?php bloginfo('template_directory'); ?>/assets/dist/images/header-desktop.webp" alt="">
+        <img class="md:hidden" src="<?php bloginfo('template_directory'); ?>/assets/dist/images/header-mobile.webp"
+             alt="">
+      </a>
+    </h1>
   </div>
   <button class="menu-toggle hamburger-menu">
       <span class="hamburger">

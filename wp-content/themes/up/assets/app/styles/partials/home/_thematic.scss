@@ -1,0 +1,48 @@
+.thematic {
+  margin-top: 160px;
+
+  @include media('<=768px') {
+    margin-top: 80px;
+  }
+
+  .home-title {
+    margin-left: 0;
+  }
+
+  &-wrapper {
+    display: grid;
+    grid-template-columns: 75% auto;
+    gap: 16px;
+    margin: 0 auto;
+    max-width: 952px;
+    width: 100%;
+
+    > div:first-child {
+      background-color: rgba(150, 203, 219, .6);
+      border-radius: 64px 64px 4px 64px;
+      color: $black-bgc;
+      padding: 40px 24px;
+    }
+  }
+
+  h3 {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+
+  figure {
+    height: 80%;
+    margin-top: auto;
+  }
+
+  img {
+    border-radius: 64px 64px 64px 4px;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &-read-more {
+    text-align: right;
+  }
+}

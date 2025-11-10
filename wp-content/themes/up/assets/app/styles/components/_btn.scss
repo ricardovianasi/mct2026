@@ -17,6 +17,12 @@
   color: #fff;
 }
 
+.btn-yellow {
+  @extend %btn;
+  background-color: $yellow;
+  color: $black-bgc;
+}
+
 .btn-link {
   align-items: center;
   display: inline-flex;

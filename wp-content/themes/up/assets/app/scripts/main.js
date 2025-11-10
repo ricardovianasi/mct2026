@@ -152,7 +152,7 @@ $(document).ready(() => {
     loop: false,
     clickable: true,
     watchSlidesProgress: true,
-    spaceBetween: 0,
+    spaceBetween: 16,
     breakpoints: {
       320: {
         slidesPerView: 2,
