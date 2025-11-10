@@ -42,7 +42,7 @@ if ($bannerItems): ?>
       </div>
       <?php if (count($bannerItems) > 1): ?>
         <div class="slider-controls red">
-          <<button class="slider-button-prev">
+          <button class="slider-button-prev">
             <i class="icon-arrow-left-2"></i>
           </button>
           <div class="slider-pagination"></div>
