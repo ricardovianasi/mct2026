@@ -19,10 +19,10 @@
  * @package WordPress
  */
 
- // $_SERVER['HTTPS']='on';
+ $_SERVER['HTTPS']='on';
 
- define('WP_HOME','http://159.203.111.152/');
- define('WP_SITEURL','http://159.203.111.152/');
+ define('WP_HOME','https://mostratiradentes.com.br/');
+ define('WP_SITEURL','https://mostratiradentes.com.br/');
 
  define('RELOCATE',true);
 
