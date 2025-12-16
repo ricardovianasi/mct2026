@@ -17,8 +17,13 @@
     max-width: 952px;
     width: 100%;
 
+    @include media('<=768px') {
+      display: flex;
+      flex-direction: column;
+    }
+
     > div:first-child {
-      background-color: rgba(150, 203, 219, .6);
+      background-color: $blue;
       border-radius: 64px 64px 4px 64px;
       color: $black-bgc;
       padding: 40px 24px;

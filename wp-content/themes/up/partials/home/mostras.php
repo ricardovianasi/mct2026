@@ -8,7 +8,7 @@ if (!empty($up_home_mostra['up_home_mostra_enabled'])):
   ?>
 
   <div class="category">
-    <div class="container container-big flex-col">
+    <div class="container big flex-col">
       <h2 class="home-title"><?php echo $up_home_mostra_title ?></h2>
       <div class="category-wrapper">
         <div class="category-names">
@@ -25,40 +25,41 @@ if (!empty($up_home_mostra['up_home_mostra_enabled'])):
         </div>
         <div class="category-items">
           <div class="swiper">
-              <div class="swiper-wrapper">
-                <?php foreach ($up_home_mostra_items as $mostra):
-                  $mostra_title = $mostra['title'] ?? '';
-                  $mostra_description = $mostra['description'] ?? '';
-                  $mostra_link = $mostra['link'] ?? '';
-                  $mostra_movies = $mostra['movies'] ?? [];
-                  ?>
-                  <div class="swiper-slide category-item">
-                    <div class="flex">
-                      <div class="category-desc">
-                        <?php echo $mostra_description ?>
-                        <div class="category-item-readmore">
-                          <?php if ($mostra_link): ?>
-                            <a class="btn-dark with-decorator red" href="<?php echo $mostra_link ?>">
-                              <?php echo __('Ver Filmes', 'up') ?></a>
-                          <?php endif; ?>
-                        </div>
+            <div class="swiper-wrapper">
+              <?php foreach ($up_home_mostra_items as $mostra):
+                $mostra_title = $mostra['title'] ?? '';
+                $mostra_description = $mostra['description'] ?? '';
+                $mostra_link = $mostra['link'] ?? '';
+                $mostra_movies = $mostra['movies'] ?? [];
+                ?>
+                <div class="swiper-slide category-item">
+                  <div class="flex">
+                    <div class="category-desc">
+                      <?php echo $mostra_description ?>
+                      <div class="category-item-readmore">
+                        <?php if ($mostra_link): ?>
+                          <a class="btn-link btn-link--readmore uppercase" href="<?php echo $mostra_link ?>">
+                            <?php echo __('Ver Filmes', 'up') ?></a>
+                        <?php endif; ?>
                       </div>
-                      <div class="category-movies">
-                        <div class="movie movie-list">
-                          <div class="movie-items">
-                            <?php foreach ($mostra_movies as $m) {
-                              echo $movie::single($m);
-                            } ?>
-                          </div>
+                    </div>
+                    <div class="category-movies">
+                      <div class="movie movie-list">
+                        <div class="movie-items">
+                          <?php foreach ($mostra_movies as $m) {
+                            echo $movie::single($m);
+                          } ?>
                         </div>
                       </div>
                     </div>
-
                   </div>
-                <?php endforeach; ?>
-              </div>
+
+                </div>
+              <?php endforeach; ?>
             </div>
-          <div class="slider-navigation flex gap-4">
+          </div>
+          <div class="slider-controls wthite">
+            <div class="slider-navigation white flex gap-4">
               <button class="slider-button-prev">
                 <i class="icon-arrow-left-2"></i>
               </button>
@@ -66,6 +67,7 @@ if (!empty($up_home_mostra['up_home_mostra_enabled'])):
                 <i class="icon-arrow-right-2"></i>
               </button>
             </div>
+          </div>
         </div>
       </div>
     </div>

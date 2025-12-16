@@ -26,6 +26,19 @@
       color: $red;
     }
   }
+
+  &.blue {
+    .slider-button-prev,
+    .slider-button-next {
+      background: $blue;
+      color: $black-bgc;
+    }
+
+    .slider-pagination .swiper-pagination-bullet {
+      background: $blue;
+      color: $black-bgc;
+    }
+  }
 }
 
 .slider-pagination {

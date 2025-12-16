@@ -272,20 +272,23 @@ class Movie
         <?php endif; ?>
         <span class="movie-content">
           <span class="title"><?php echo get_the_title($movie); ?></span>
+        </span>
+        <span class="movie-content on-hover">
+          <span class="title"><?php echo get_the_title($movie); ?></span>
           <?php if ($movie_dir): ?>
-            <span class="direction on-hover"><?php echo __('Direção', 'up') ?>: <?php echo $movie_dir ?></span>
+            <span class="direction"><?php echo __('Direção', 'up') ?>: <?php echo $movie_dir ?></span>
           <?php endif; ?>
           <?php if ($movie_resume): ?>
-            <span class="info on-hover"><?php echo $movie_resume ?></span>
+            <span class="info"><?php echo $movie_resume ?></span>
           <?php endif; ?>
           <?php if (count($estadoPais) > 0): ?>
-            <span class="country on-hover"><?php echo implode( ' / ', $estadoPais ); ?></span>
+            <span class="country"><?php echo implode( ' / ', $estadoPais ); ?></span>
           <?php endif; ?>
           <?php if ($movie_player_obj->isPlayerOpen()): ?>
-            <span class="read-more btn-link on-hover uppercase">
+            <span class="read-more btn-link uppercase">
               <?php echo __('Assista', 'up') ?> <i class="icon-arrow-right"></i></span>
           <?php else: ?>
-            <span class="read-more btn-link on-hover uppercase">
+            <span class="read-more btn-link uppercase">
               <?php echo __('Saiba mais', 'up') ?> <i class="icon-arrow-right"></i></span>
           <?php endif; ?>
         </span>

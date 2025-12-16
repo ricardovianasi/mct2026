@@ -4,7 +4,7 @@ $category_content_width: 342px;
   padding-top: 160px;
 
   @include media("<=768px") {
-    padding-top: 80px 0;
+    padding-top: 80px;
   }
 
   .home-title {

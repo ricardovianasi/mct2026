@@ -1,0 +1,147 @@
+.debate {
+  padding-top: 160px;
+  position: relative;
+
+  @include media('<=768px') {
+    padding-top: 80px;
+  }
+
+  &-items {
+  }
+
+  &-item {
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 1195px;
+    gap: 24px;
+
+    @include media('<=768px') {
+      flex-direction: column;
+      gap: 0;
+      padding: 0;
+    }
+  }
+
+  &-img-grid,
+  figure {
+    position: relative;
+    z-index: 10;
+  }
+
+  &-img-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    gap: 8px;
+
+
+    @include media('<=768px') {
+      width: 100%;
+      grid-template-columns: repeat(3, auto);
+    }
+
+    img {
+      height: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+
+      &:nth-child(1) {
+        border-radius: 100%;
+      }
+
+      &:nth-child(2),
+      &:nth-child(7) {
+        border-radius: 74px 4px 74px 4px;
+      }
+
+      &:nth-child(3) {
+        border-radius: 4px 74px 74px 74px;
+      }
+
+      &:nth-child(4) {
+        border-radius: 74px 4px 4px 74px;
+      }
+
+      &:nth-child(5) {
+        border-radius: 4px 4px 74px 4px;
+      }
+
+      &:nth-child(6),
+      &:nth-child(8) {
+        border-radius: 4px 74px 4px 74px;
+      }
+
+      &:nth-child(9) {
+        border-radius: 74px 74px 4px 4px;
+      }
+    }
+  }
+
+  .desc {
+    align-items: flex-start;
+    background-color: #444444;
+    border-radius: 64px 64px 64px 4px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    width: 100%;
+    padding: 32px 32px 32px 44px;
+    justify-content: center;
+    margin-top: 48px;
+
+    @include media('<=768px') {
+      padding: 24px;
+      margin-top: 0;
+    }
+  }
+
+  .title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 150%;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+
+    @include media('<=768px') {
+      font-size: 20px;
+    }
+  }
+
+  .date {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 22.4px */
+    letter-spacing: 1.28px;
+    text-transform: uppercase;
+  }
+
+  .btn-link {
+    margin-top: 24px;
+    justify-content: flex-end;
+
+    @include media('<=768px') {
+      margin-top: 0;
+    }
+  }
+
+  &-controls {
+    align-items: center;
+    margin-top: 24px;
+
+    @include media('<=768px') {
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .slider-pagination {
+      @include media('<=768px') {
+        display: none;
+      }
+    }
+  }
+}

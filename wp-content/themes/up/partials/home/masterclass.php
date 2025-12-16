@@ -30,13 +30,13 @@ if (!empty($home_training['up_home_training_enabled'])) {
   $masterclassDots = "";
   ?>
   <div class="workshop">
-    <div class="container container-big flex-col">
+    <div class="container flex-col">
       <h2 class="home-title"><?php echo $home_training_title ?></h2>
-    </div>
-    <div class="container container-big flex-col">
+
       <div class="workshop-slider">
-        <div class="workshop-slider-main swiper">
-          <div class="swiper-wrapper">
+        <div class="workshop-slider-main">
+          <div class="swiper">
+            <div class="swiper-wrapper">
             <?php foreach ($orderly_trainning_items as $item):
               $item_image_list = get_field('presentation_image', $item);
               $item_image_home = get_field('presentation_image_home', $item);
@@ -72,7 +72,11 @@ if (!empty($home_training['up_home_training_enabled'])) {
               }
 
               $activity_terms = get_the_terms($item, 'cat_activities');
-              $playerObj = new UP_Player($item); ?>
+              $playerObj = new UP_Player($item);
+
+              $masterclassDots .= '<div class="swiper-slide">'.wp_get_attachment_image($item_image['ID'], 'masterclass').'</div>';
+
+              ?>
               <div class="workshop-item swiper-slide">
                 <figure><?php echo wp_get_attachment_image($item_image['ID'], 'masterclass') ?></figure>
                 <div class="workshop-desc">
@@ -107,10 +111,18 @@ if (!empty($home_training['up_home_training_enabled'])) {
               </div>
             <?php endforeach; ?>
           </div>
+          </div>
+        </div>
+        <div class="workshop-thumbs">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <?php echo $masterclassDots; ?>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="workshop-controls slider-controls">
-        <div class="slider-navigation">
+      <div class="slider-controls blue">
+        <div class="slider-navigation white flex gap-4">
           <button class="slider-button-prev">
             <i class="icon-arrow-left-2"></i>
           </button>
@@ -118,11 +130,6 @@ if (!empty($home_training['up_home_training_enabled'])) {
             <i class="icon-arrow-right-2"></i>
           </button>
         </div>
-        <div class="slider-pagination"></div>
-        <?php if ($home_training_link_url): ?>
-          <a class="btn-dark with-decorator red"
-             href="<?php echo $home_training_link_url ?>"><?php echo $home_training_link_label ?></a>
-        <?php endif; ?>
       </div>
     </div>
   </div>

@@ -3,6 +3,10 @@ $tribute-gap: 24px;
 .tribute {
   margin-top: 160px;
 
+  @include media('<=768px') {
+    margin-top: 80px;
+  }
+
   .home-title {
     margin-left: 0;
   }
@@ -12,6 +16,9 @@ $tribute-gap: 24px;
     grid-template-columns: 1fr 1fr;
     gap: $tribute-gap;
 
+    @include media('<=768px') {
+      grid-template-columns: 1fr;
+    }
 
     figure {
       position: relative;
@@ -58,6 +65,10 @@ $tribute-gap: 24px;
   }
 
   .left {
+    @include media('<=768px') {
+      display: none;
+    }
+
     figure:first-child {
       height: 360px;
       width: 360px;

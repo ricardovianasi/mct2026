@@ -2,12 +2,12 @@
 get_header();
 get_template_part('partials/home/banner');
 get_template_part('partials/home/intro');
-//get_template_part('partials/home/mostras');
+get_template_part('partials/home/mostras');
 //get_template_part('partials/home/thematic');
 //get_template_part('partials/home/tribute');
 //get_template_part('partials/home/bcm');
 //get_template_part('partials/home/debate');
-//get_template_part('partials/home/masterclass');
+get_template_part('partials/home/masterclass');
 //get_template_part('partials/home/art');
 //get_template_part('partials/home/sections');
 get_template_part('partials/home/gallery');

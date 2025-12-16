@@ -51,9 +51,15 @@ $(document).ready(() => {
     },
   });
 
-  const workshop = new Swiper('.workshop-slider-main', {
-    slidesPerView: 2,
-    spaceBetween: 74,
+  const workshopThumb = new Swiper('.workshop-thumbs .swiper', {
+    spaceBetween: 24,
+    slidesPerView: 'auto',
+    watchSlidesProgress: true,
+  });
+  const workshop = new Swiper('.workshop-slider-main .swiper', {
+
+    slidesPerView: 1,
+    spaceBetween: 24,
     loop: false,
     pagination: {
       el: '.workshop .slider-pagination',
@@ -64,14 +70,9 @@ $(document).ready(() => {
       nextEl: `.workshop ${sliderNextEl}`,
       prevEl: `.workshop ${sliderPrevEl}`,
     },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 2,
-      }
-    }
+    thumbs: {
+      swiper: workshopThumb,
+    },
   });
 
   const art = new Swiper('.art-slider-main', {

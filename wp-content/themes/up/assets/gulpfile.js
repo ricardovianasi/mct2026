@@ -134,7 +134,7 @@ function startAppServer() {
       routes: {
         '/node_modules': 'node_modules'
       }
-    }
+    },
   });
 
   watch([
@@ -143,7 +143,6 @@ function startAppServer() {
     '.tmp/fonts/**/*'
   ]).on('change', server.reload);
 
-  watch('app/*.html', styles);
   watch('app/styles/**/*.scss', styles);
   watch('app/scripts/**/*.js', scripts);
   watch('app/fonts/**/*', fonts);
