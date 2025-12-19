@@ -39,6 +39,7 @@ body {
 @import 'components/slider';
 @import 'components/overflow';
 @import 'components/wp-block';
+@import 'components/tag';
 
 // Base
 @import 'base/header-top';
@@ -52,3 +53,4 @@ body {
 @import "partials/news";
 @import "partials/movie";
 @import "partials/movie-details";
+@import "partials/formation";

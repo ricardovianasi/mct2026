@@ -1,0 +1,26 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tag {
+  background-color: #D66F3C;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 12px !important;
+  line-height: 110%;
+  font-weight: 700;
+  padding: 8px 8px;
+  text-transform: uppercase;
+
+  &.pink {
+    background-color: #B699A18C;
+    color: #313131;
+  }
+
+  &.black {
+    background-color: #313131;
+    color: white;
+  }
+}

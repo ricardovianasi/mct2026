@@ -26,7 +26,7 @@ if (!empty($home_art['up_home_art_enabled'])) {
     }
   }
   ksort($orderly_art_items);
- 
+
   ?>
   <div class="workshop">
     <div class="container container-big flex-col">
