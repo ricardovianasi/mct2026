@@ -136,7 +136,7 @@ function UPMovies_management_page()
     
     
     //Selecionar os filmes
-    $movieFile = fopen(WP_CONTENT_DIR . '/csv/movie2.csv', 'r');
+    $movieFile = fopen(WP_CONTENT_DIR . '/csv/movie.csv', 'r');
     $cont = 0;
     while (($movie = fgetcsv($movieFile, 1000, ",")) !== false) {
       
@@ -168,14 +168,15 @@ function UPMovies_management_page()
         $sinopse,
         $classificacao,// Classificação indicativa:
         $trailer,
+        , // longa / curta
+        , // email
+        , //o filme contou com recursos
         , // Imagem de divulgação do filme para catálogo:
         , // Imagem horizontal do filme para site:
         , // Pôster / imagem vertical do filme para site:
         , // Autorização de exibição
         $miniBioDirecao,
         , // Foto de divulgação da direção:
-        , // Credito das Imagens
-        $tituloEmPortugues,
       ] = $movie;
       
       
