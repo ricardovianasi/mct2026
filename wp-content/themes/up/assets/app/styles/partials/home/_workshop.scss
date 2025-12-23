@@ -33,7 +33,7 @@
     }
 
     .swiper-slide:not(.swiper-slide-visible) {
-      opacity: 0;
+      opacity: 0 !important;
     }
   }
 
@@ -92,6 +92,10 @@
 
     .swiper {
       overflow: visible;
+    }
+
+    .swiper-slide {
+      cursor: pointer;
     }
 
     .swiper-slide, img {
