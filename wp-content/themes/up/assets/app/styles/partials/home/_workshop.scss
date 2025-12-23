@@ -21,6 +21,20 @@
     background-color: $black-bgc;
     position: relative;
     z-index: 100;
+
+    &::before {
+      background-color: $black-bgc;
+      content: '';
+      height: 100%;
+      right: 100%;
+      position: absolute;
+      top: 0;
+      width: 100vw;
+    }
+
+    .swiper-slide:not(.swiper-slide-visible) {
+      opacity: 0;
+    }
   }
 
   &-item {
