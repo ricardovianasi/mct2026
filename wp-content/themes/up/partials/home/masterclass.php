@@ -106,7 +106,7 @@ if (!empty($home_training['up_home_training_enabled'])) {
                       </span>
                     <?php endif; ?>
                   </div>
-                  <a class="btn-white with-decorator red" href="<?php echo get_the_permalink($item) ?>"><?php echo __('Saiba Mais')?></a>
+                  <a class="btn-yellow" href="<?php echo get_the_permalink($item) ?>"><?php echo __('Saiba Mais')?></a>
                 </div>
               </div>
             <?php endforeach; ?>

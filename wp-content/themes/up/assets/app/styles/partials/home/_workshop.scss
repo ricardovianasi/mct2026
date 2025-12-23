@@ -18,6 +18,7 @@
   }
 
   &-slider-main {
+    background-color: $black-bgc;
     position: relative;
     z-index: 100;
   }
@@ -73,6 +74,10 @@
   &-thumbs {
     @include media('<=768px') {
       display: none;
+    }
+
+    .swiper {
+      overflow: visible;
     }
 
     .swiper-slide, img {

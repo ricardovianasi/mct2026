@@ -56,15 +56,15 @@ $(document).ready(() => {
     slidesPerView: 'auto',
     watchSlidesProgress: true,
   });
-  const workshop = new Swiper('.workshop-slider-main .swiper', {
-
+  const workshop = new Swiper(".workshop-slider-main .swiper", {
+    effect: "fade",
     slidesPerView: 1,
     spaceBetween: 24,
     loop: false,
     pagination: {
-      el: '.workshop .slider-pagination',
-      type: 'bullets',
-      clickable: true
+      el: ".workshop .slider-pagination",
+      type: "bullets",
+      clickable: true,
     },
     navigation: {
       nextEl: `.workshop ${sliderNextEl}`,
