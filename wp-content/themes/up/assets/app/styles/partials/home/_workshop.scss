@@ -32,6 +32,19 @@
       width: 100vw;
     }
 
+    &::after {
+      background: #1E1E1E;
+      background: linear-gradient(90deg, rgb(30, 30, 30) 26%, rgba(30, 30, 30, 0) 100%);
+      content: '';
+      height: 100%;
+      right: 0;
+      position: absolute;
+      transform: translateX(100%);
+      top: 0;
+      width: 48px;
+      z-index: 100;
+    }
+
     .swiper-slide:not(.swiper-slide-visible) {
       opacity: 0 !important;
     }
