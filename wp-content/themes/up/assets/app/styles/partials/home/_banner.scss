@@ -3,6 +3,23 @@
     overflow: visible;
   }
 
+  .desktop {
+    display: flex;
+
+    @include media('<=768px') {
+      display: none;
+    }
+  }
+
+  .mobile {
+    display: none;
+
+
+    @include media('<=768px') {
+      display: flex;
+    }
+  }
+
   img {
     position: relative;
     width: 100%;
