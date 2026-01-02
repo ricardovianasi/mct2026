@@ -184,11 +184,7 @@ class Formation
 
             <?php if ($block_formation_layout !== 'arte'): ?>
               <div class="desc">
-                <?php if ($block_tag): ?>
-                  <div class="tags">
-                    <div class="tag"><?php echo $block_tag ?></div>
-                  </div>
-                <?php endif; ?>
+
                 <div class="title">
                   <h2 class="uppercase"><?php echo get_the_title($block) ?></h2>
                   <?php if ($block_subtitle): ?>
@@ -196,32 +192,42 @@ class Formation
                   <?php endif; ?>
                 </div>
 
+                <div class="desc-wrapper">
+                  <?php if ($block_tag): ?>
+                    <div class="tags">
+                      <div class="tag"><?php echo $block_tag ?></div>
+                    </div>
+                  <?php endif; ?>
 
-                <?php if ($block_formation_layout !== 'juri'): ?>
-                  <div class="info">
-                  <?php if ($block_date): ?><span class="date"><i
-                    class="icon-mdi-calendar"></i><?php echo $block_date ?>
-                    </span><?php endif; ?>
-                  <?php if ($activity_hour): ?><span class="hour"><i
-                    class="icon-clock"></i><?php echo $activity_hour; ?>
-                    </span><?php endif; ?>
-                  <?php if ($block_place): ?><span class="place"><i
-                    class="icon-pin-fill"></i><?php echo $block_place; ?>
-                    </span><?php endif; ?>
-                  <?php if ($block_workload): ?>
-                    <span><i
-                        class="icon-clock"></i><?php echo __('carga horária', 'up') ?>: <?php echo $block_workload; ?></span>
+                  <?php if ($block_formation_layout !== 'juri'): ?>
+                    <div class="info">
+                    <?php if ($block_date): ?><span class="date"><i
+                      class="icon-mdi-calendar"></i><?php echo $block_date ?>
+                      </span><?php endif; ?>
+                    <?php if ($activity_hour): ?><span class="hour"><i
+                      class="icon-clock"></i><?php echo $activity_hour; ?>
+                      </span><?php endif; ?>
+                    <?php if ($block_place): ?><span class="place"><i
+                      class="icon-pin-fill"></i><?php echo $block_place; ?>
+                      </span><?php endif; ?>
+                    <?php if ($block_workload): ?>
+                      <span><i
+                          class="icon-clock"></i><?php echo __('carga horária', 'up') ?>: <?php echo $block_workload; ?></span>
+                    <?php endif; ?>
+                    <?php if ($block_vacancies): ?>
+                      <span><i
+                          class="icon-user"></i><?php echo __('vagas', 'up') ?>: <?php echo $block_vacancies; ?></span>
+                    <?php endif; ?>
+                    <?php if ($block_age_range): ?>
+                      <span><i
+                          class="icon-user"></i><?php echo __('faixa etária', 'up') ?>: <?php echo $block_age_range; ?></span>
+                    <?php endif; ?>
+                  </div>
                   <?php endif; ?>
-                  <?php if ($block_vacancies): ?>
-                    <span><i
-                        class="icon-user"></i><?php echo __('vagas', 'up') ?>: <?php echo $block_vacancies; ?></span>
-                  <?php endif; ?>
-                  <?php if ($block_age_range): ?>
-                    <span><i
-                        class="icon-user"></i><?php echo __('faixa etária', 'up') ?>: <?php echo $block_age_range; ?></span>
+                  <?php if ($block_obs): ?>
+                    <p><i><?php echo $block_obs ?></i></p>
                   <?php endif; ?>
                 </div>
-                <?php endif; ?>
 
                 <?php if ($block_formation_layout !== 'juri'): ?>
                   <p class="excerpt">
@@ -230,23 +236,19 @@ class Formation
                 <?php endif; ?>
 
 
-                <?php if ($block_obs): ?>
-                  <p><i><?php echo $block_obs ?></i></p>
-                <?php endif; ?>
-
                 <?php if ($block_formation_layout !== 'juri'): ?>
                   <div class="cta">
                     <?php if (!$block_readmore): ?>
-                      <a class="btn-red with-decorator black" href="<?php echo get_the_permalink($block) ?>">
+                      <a class="btn-yellow" href="<?php echo get_the_permalink($block) ?>">
                         <?php echo __('Saiba mais', 'up') ?></a>
                     <?php endif; ?>
                     <?php if (!empty($block_subscription) && $block_subscription['presentation_subscription_enabled']): ?>
                       <a target="_blank"
-                         class="btn-dark with-decorator red"
+                         class="btn-link"
                          href="<?php echo $block_subscription['presentation_subscription_link'] ?>">
                         <?php echo !empty($block_subscription['presentation_subscription_label'])
                           ? $block_subscription['presentation_subscription_label']
-                          : __('Inscreva-se', 'up'); ?>
+                          : __('Inscreva-se', 'up'); ?> <i class="icon-arrow-right"></i>
                       </a>
                     <?php endif; ?>
                   </div>
