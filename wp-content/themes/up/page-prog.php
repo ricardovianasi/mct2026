@@ -113,8 +113,8 @@ ob_start(); ?>
             <button value="" class="btn btn-primary <?php echo !$day_filter ? 'active' : '' ?> ">
               <span><?php echo __('todos', 'up') ?></span></button>
             <?php
-            $prog_event_init = \DateTime::createFromFormat('Y-m-d', '2025-09-23');
-            $prog_event_end = \DateTime::createFromFormat('Y-m-d', '2025-09-28');
+            $prog_event_init = \DateTime::createFromFormat('Y-m-d', '2026-01-23');
+            $prog_event_end = \DateTime::createFromFormat('Y-m-d', '2026-01-31');
             while ($prog_event_init <= $prog_event_end) {
               echo sprintf(
                 "<button value='%s' name='dia' class='btn %s' type='submit'><span>%s</span></button>",
@@ -175,28 +175,30 @@ ob_start(); ?>
                     echo wp_get_attachment_image($prog_img['ID'], 'prog');
                   } ?>
                 </figure>
-                <div class="wrapper">
-                  <div class="label">
-                    <span class="tag"><?php echo $prog_real_label ?></span>
-                    <?php if ($prog_online): ?>
-                      <span class="tag"><?php echo __('Assista on-line', 'up') ?></span>
-                    <?php endif; ?>
-                  </div>
-                  <div class="wrapper-bgc">
-                    <h3><?php echo get_the_title($prog) ?></h3>
-                    <?php if ($prog_obs): ?>
-                      <p class="obs"><i><?php echo $prog_obs ?></i></p>
-                    <?php endif; ?>
-                    <span class="date"><i class="icon-mdi-calendar mr-3"></i><?php echo $prog_real_date ?></span>
-                    <span class="where">
-                      <?php if ($prog_place): ?>
-                        <i class="icon-pin-fill mr-3"></i><?php echo $prog_place; ?>
+                <div>
+                  <div class="wrapper">
+                    <div class="label">
+                      <span class="tag"><?php echo $prog_real_label ?></span>
+                      <?php if ($prog_online): ?>
+                        <span class="tag"><?php echo __('Assista on-line', 'up') ?></span>
                       <?php endif; ?>
-                    </span>
-                    <?php if ($prog_real_link): ?>
-                      <span class="btn-red with-decorator white"><?php echo __('Saiba Mais', 'up') ?></span>
-                    <?php endif; ?>
+                    </div>
+                    <div class="wrapper-bgc">
+                      <h3><?php echo get_the_title($prog) ?></h3>
+                      <?php if ($prog_obs): ?>
+                        <p class="obs"><i><?php echo $prog_obs ?></i></p>
+                      <?php endif; ?>
+                      <span class="date"><i class="icon-mdi-calendar mr-3"></i><?php echo $prog_real_date ?></span>
+                      <span class="where">
+                        <?php if ($prog_place): ?>
+                          <i class="icon-pin-fill mr-3"></i><?php echo $prog_place; ?>
+                        <?php endif; ?>
+                      </span>
+                    </div>
                   </div>
+                  <?php if ($prog_real_link): ?>
+                    <span class="btn btn-yellow"><?php echo __('Saiba Mais', 'up') ?></span>
+                  <?php endif; ?>
                 </div>
               </a>
             </div>

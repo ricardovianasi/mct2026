@@ -30,7 +30,7 @@ if (!empty($home_debate['up_home_debate_enabled'])) {
     ksort($orderly_debate_items);
     ?>
     <div class="debate">
-      <div class="container container-big flex-col">
+      <div class="container flex-col">
         <h2 class="home-title">
           <?php echo $home_debate_title ?>
         </h2>
@@ -54,7 +54,7 @@ if (!empty($home_debate['up_home_debate_enabled'])) {
                 if ($cat_place_terms) {
                   $item_place = $cat_place_terms->name;
                 } ?>
-                <div class="debate-item">
+                <div class="debate-item swiper-slide">
                   <?php if ($block_image_grid): ?>
                     <div class="debate-img-grid">
                       <?php foreach ($block_image_grid as $key => $img) {
@@ -72,18 +72,19 @@ if (!empty($home_debate['up_home_debate_enabled'])) {
                     <p class="excerpt">
                       <?php echo get_the_excerpt($debate); ?>
                     </p>
-                    <a class="btn-white with-decorator black"
-                       href="<?php echo get_the_permalink($debate) ?>"><?php echo __('Ver Mais', 'up') ?></a>
+                    <a class="btn-link"
+                       href="<?php echo get_the_permalink($debate) ?>"><?php echo __('Ver Mais', 'up') ?>
+                      <i class="icon-arrow-right-2"></i>
+                    </a>
                   </div>
                 </div>
               <?php endforeach; ?>
             </div>
           </div>
         </div>
-        <div class="container container-medium">
-          <div class="debate-controls slider-controls">
-
-            <div class="slider-navigation">
+        <div class="container">
+          <div class="debate-controls slider-controls red">
+            <div class="slider-navigation white flex gap-4">
               <button class="slider-button-prev">
                 <i class="icon-arrow-left-2"></i>
               </button>
@@ -91,9 +92,8 @@ if (!empty($home_debate['up_home_debate_enabled'])) {
                 <i class="icon-arrow-right-2"></i>
               </button>
             </div>
-            <div class="slider-pagination"></div>
             <?php if ($home_debate_link_url): ?>
-              <a class="btn-dark with-decorator red" href="<?php echo $home_debate_link_url; ?>">
+              <a class="btn-red" href="<?php echo $home_debate_link_url; ?>">
                 <?php echo $home_debate_link_label ?></a>
             <?php endif; ?>
           </div>

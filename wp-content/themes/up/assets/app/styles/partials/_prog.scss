@@ -1,0 +1,260 @@
+.prog {
+  &-filter {
+    margin-bottom: 36px;
+    position: relative;
+
+    form {
+      align-items: flex-start;
+      display: grid;
+      grid-template-columns: 0.6fr 1.4fr;
+      gap: 16px;
+      row-gap: 16px;
+      position: relative;
+      z-index: 100;
+
+      @include media('<=768px') {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .row {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    label {
+      color: #fff;
+      display: block;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    select {
+      background-color: #fff;
+      border: 1px solid #000;
+      border-radius: 24px;
+      color: #444444;
+      flex: 1;
+      font-weight: 600;
+      line-height: 140%;
+      margin-bottom: 16px;
+      padding: 10px 16px;
+    }
+
+    .days {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(5, 1fr);
+      justify-content: center;
+
+      @include media('<=768px') {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .btn {
+      color: #fff;
+      border: 1px solid #fff;
+      border-radius: 24px;
+      flex: 1;
+      font-size: 18px;
+      justify-content: center;
+      padding: 10px 18px;
+      font-weight: 400;
+      white-space: nowrap;
+      text-align: center;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+
+      @include media('<=768px') {
+        font-size: 14px;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      &.active {
+        background-color: $red;
+        border-color: $red;
+        color: #fff;
+      }
+    }
+  }
+
+  &-items-wrapper {
+    @include expand;
+    display: flex;
+    flex-direction: column;
+    padding: 110px 0;
+    position: relative;
+
+    @include media('<=768px') {
+      padding: 0;
+    }
+
+    .container {
+      align-items: flex-start;
+    }
+  }
+
+  &-day {
+    background-color: #96CBDB;
+    border-radius: 4px 36px 36px 36px;
+    color: #1E1E1E;
+    padding: 16px 32px;
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+
+    @include media('<=768px') {
+      margin-bottom: 16px;
+      margin-top: 24px;
+    }
+
+    span {
+      display: inline-block;
+      font-size: 28px;
+      line-height: 140%;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+
+      position: relative;
+      text-align: center;
+      width: 100%;
+
+      @include media('<=768px') {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &-movie {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 40px 0;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+  }
+
+  &-items-list {
+    margin-top: 65px;
+    width: 100%;
+    position: relative;
+
+    @include media('<=768px') {
+      margin-top: 0;
+    }
+  }
+
+  &-item {
+    margin-bottom: 64px;
+    position: relative;
+
+    @include media('<=768px') {
+      margin-bottom: 40px;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    a {
+      //display: flex;
+      align-items: flex-start;
+      text-decoration: none;
+      display: grid;
+      gap: 8px;
+      grid-template-columns: 342px auto;
+
+      @include media('<=768px') {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+      }
+    }
+
+    figure {
+      //width: 30%;
+      height: 342px;
+
+      @include media('<=768px') {
+        width: 100%;
+      }
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+        border-radius: 171px 4px 171px 171px;
+      }
+    }
+
+    .label {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 18px;
+    }
+
+    .wrapper {
+      background-color: #444444;
+      border-radius: 4px 143px 143px 4px;
+      display: flex;
+      flex-direction: column;
+      padding: 30px 24px;
+      position: relative;
+      justify-content: center;
+
+      @include media('<=768px') {
+        padding: 12px 0;
+        width: 100%;
+      }
+
+      &-bgc {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      h3 {
+        font-size: 24px;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin: 0;
+      }
+
+      .obs {
+        font-size: 14px;
+        font-style: italic;
+        margin: 0;
+      }
+    }
+
+    .date,
+    .where,
+    .btn-link {
+      text-transform: uppercase;
+    }
+
+    .btn {
+      justify-content: center;
+      margin-top: 8px;
+
+      @include media('>768px') {
+        justify-self: flex-end;
+      }
+
+      @include media('<=768px') {
+        margin-top: 12px;
+      }
+    }
+  }
+}
