@@ -227,14 +227,12 @@ class Formation
                   <?php if ($block_obs): ?>
                     <p><i><?php echo $block_obs ?></i></p>
                   <?php endif; ?>
+                  <?php if ($block_formation_layout !== 'juri'): ?>
+                    <p class="excerpt">
+                      <?php echo get_the_excerpt($block) ?>
+                    </p>
+                  <?php endif; ?>
                 </div>
-
-                <?php if ($block_formation_layout !== 'juri'): ?>
-                  <p class="excerpt">
-                    <?php echo get_the_excerpt($block) ?>
-                  </p>
-                <?php endif; ?>
-
 
                 <?php if ($block_formation_layout !== 'juri'): ?>
                   <div class="cta">
