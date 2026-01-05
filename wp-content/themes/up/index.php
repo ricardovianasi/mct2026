@@ -13,6 +13,6 @@ get_template_part('partials/home/art');
 get_template_part('partials/home/gallery');
 get_template_part('partials/home/tv');
 get_template_part('partials/home/news');
-//get_template_part('partials/home/timeline');
+get_template_part('partials/home/timeline');
 get_template_part('partials/home/brands');
 get_footer();
