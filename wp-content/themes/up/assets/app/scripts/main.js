@@ -56,14 +56,14 @@ $(document).ready(() => {
     slidesPerView: 'auto',
     watchSlidesProgress: true,
   });
-  const workshop = new Swiper('.workshop-slider-main .swiper', {
-    effect: 'fade',
+  const workshop = new Swiper(".workshop-slider-main .swiper", {
+    effect: "fade",
     slidesPerView: 1,
     spaceBetween: 24,
     loop: false,
     pagination: {
-      el: '.workshop .slider-pagination',
-      type: 'bullets',
+      el: ".workshop .slider-pagination",
+      type: "bullets",
       clickable: true,
     },
     navigation: {
@@ -75,15 +75,10 @@ $(document).ready(() => {
     },
   });
 
-  const art = new Swiper('.art-slider-main', {
+  const art = new Swiper('.art .swiper', {
     slidesPerView: 2,
-    spaceBetween: 74,
+    spaceBetween: 24,
     loop: false,
-    pagination: {
-      el: '.art .slider-pagination',
-      type: 'bullets',
-      clickable: true
-    },
     navigation: {
       nextEl: `.art ${sliderNextEl}`,
       prevEl: `.art ${sliderPrevEl}`,

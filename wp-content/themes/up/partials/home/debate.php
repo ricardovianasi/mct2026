@@ -31,7 +31,7 @@ if (!empty($home_debate['up_home_debate_enabled'])) {
     ?>
     <div class="debate">
       <div class="container flex-col">
-        <h2 class="home-title">
+        <h2 class="home-title uppercase">
           <?php echo $home_debate_title ?>
         </h2>
         <div class="debate-items">

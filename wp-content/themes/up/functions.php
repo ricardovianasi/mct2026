@@ -87,7 +87,7 @@ if( !function_exists('template_setup')):
     add_image_size( 'timeline', 592, 400, true);
 
     // Art
-    add_image_size( 'art', 592, 371, true);
+    add_image_size( 'art', 1416, 700, true);
 
     add_image_size( 'expo', 592, 354, true);
 
