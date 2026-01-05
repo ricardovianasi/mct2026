@@ -15,7 +15,7 @@ if (!empty($up_home_timeline['up_home_timeline_enabled'])) {
   ?>
 
   <div class="timeline">
-    <div class="container container-medium flex-col">
+    <div class="container flex-col">
       <h2 class="home-title"><?php echo $up_home_timeline_title ?></h2>
       <div class="timeline-items">
         <div class="swiper">
@@ -29,14 +29,10 @@ if (!empty($up_home_timeline['up_home_timeline_enabled'])) {
 
               $title = "<div><h3><span class='date'>" . get_the_title($timeline) . "</span><span class='slogan uppercase'>$timeline_slogan</span></h3></div>";
               $content = [];
-              $cont = 1;
               foreach ($timeline_gallery_home as $img) {
                 $content[] = '<figure>' . wp_get_attachment_image($img['ID'], 'expo') . '</figure>';
-                if ($cont === 1) {
-                  $content[] = $title;
-                }
-                $cont++;
               }
+              $content[] = $title;
               ?>
               <div class="timeline-item swiper-slide">
                 <?php echo implode('', $content); ?>
@@ -45,8 +41,6 @@ if (!empty($up_home_timeline['up_home_timeline_enabled'])) {
           </div>
         </div>
       </div>
-    </div>
-    <div class="container container-1216 flex-col">
       <div class="timeline-years">
         <div class="swiper">
           <div class="swiper-wrapper">
@@ -55,21 +49,22 @@ if (!empty($up_home_timeline['up_home_timeline_enabled'])) {
         </div>
       </div>
       <div class="slider-controls">
-        <div class="slider-navigation">
+        <div class="slider-controls-wrapper">
           <button class="slider-button-prev">
             <i class="icon-arrow-left-2"></i>
           </button>
+          <div class="slider-pagination"></div>
           <button class="slider-button-next">
             <i class="icon-arrow-right-2"></i>
           </button>
         </div>
-        <div class="slider-pagination"></div>
         <?php if ($up_home_timeline_link): ?>
-          <a class="btn-red with-decorator black" href="<?php echo $up_home_timeline_link ?>">
+          <a class="btn-orange" href="<?php echo $up_home_timeline_link ?>">
             <?php echo __('Ver exposição completa', 'up') ?></a>
         <?php endif; ?>
       </div>
     </div>
+
   </div>
 
   <?php

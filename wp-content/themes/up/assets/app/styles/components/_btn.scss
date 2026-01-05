@@ -17,6 +17,12 @@
   color: #fff;
 }
 
+.btn-orange {
+  @extend %btn;
+  background-color: $orange;
+  color: #fff;
+}
+
 .btn-yellow {
   @extend %btn;
   background-color: $yellow;
