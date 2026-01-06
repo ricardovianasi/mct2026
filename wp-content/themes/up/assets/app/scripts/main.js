@@ -167,7 +167,6 @@ $(document).ready(() => {
   });
   const categoriesItems = new Swiper('.home .category-items .swiper', {
     slidesPerView: 1,
-    effect: 'fade',
     loop: false,
     thumbs: {
       swiper: categoriesNames,
