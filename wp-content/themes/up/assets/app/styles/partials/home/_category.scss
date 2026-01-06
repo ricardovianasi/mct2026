@@ -12,9 +12,27 @@ $category_content_width: 342px;
   }
 
   &-names {
-    overflow: visible;
+    overflow: hidden;
     position: relative;
-    max-width: 85%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(to left, $black-bgc 0%, transparent 100%);
+    }
+
+    &-wrapper {
+      width: 342px;
+    }
 
     @include media("<=768px") {
       max-width: 100%;
@@ -22,6 +40,7 @@ $category_content_width: 342px;
 
     .swiper {
       padding-top: 40px;
+      overflow: visible;
     }
 
     .swiper-slide:hover,
@@ -39,7 +58,7 @@ $category_content_width: 342px;
     display: flex;
     height: auto;
     letter-spacing: 1.28px;
-    width: 342px;
+    //width: 342px;
 
     @include media("<=768px") {
       font-size: 16px;
@@ -70,6 +89,10 @@ $category_content_width: 342px;
     &.swiper-slide-thumb-active a {
       color: #fff;
       position: relative;
+    }
+
+    &.swiper-slide-thumb-active {
+
     }
   }
 

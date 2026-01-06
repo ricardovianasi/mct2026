@@ -144,25 +144,25 @@ $(document).ready(() => {
   });
 
   const categoriesNames = new Swiper('.home .category-names .swiper', {
-    slidesPerView: 5,
+    slidesPerView: 1,
     loop: false,
     clickable: true,
     watchSlidesProgress: true,
     spaceBetween: 16,
-    breakpoints: {
-      320: {
-        slidesPerView: 2,
-      },
-      575: {
-        slidesPerView: 3
-      },
-      768: {
-        slidesPerView: 4
-      },
-      1200: {
-        slidesPerView: 5,
-      }
-    }
+    // breakpoints: {
+    //   320: {
+    //     slidesPerView: 2,
+    //   },
+    //   575: {
+    //     slidesPerView: 3
+    //   },
+    //   768: {
+    //     slidesPerView: 4
+    //   },
+    //   1200: {
+    //     slidesPerView: 5,
+    //   }
+    // }
 
   });
   const categoriesItems = new Swiper('.home .category-items .swiper', {
