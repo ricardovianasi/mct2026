@@ -12,14 +12,16 @@ if (!empty($up_home_mostra['up_home_mostra_enabled'])):
       <h2 class="home-title"><?php echo $up_home_mostra_title ?></h2>
       <div class="category-wrapper">
         <div class="category-names">
-          <div class="swiper">
-            <div class="swiper-wrapper">
-              <?php foreach ($up_home_mostra_items as $mostra):
-                $mostra_title = $mostra['title'] ?? '';
-                ?>
-                <div class="swiper-slide category-name">
-                  <a href="javascript:;"><?php echo $mostra_title ?></a></div>
-              <?php endforeach; ?>
+          <div class="category-names-wrapper">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <?php foreach ($up_home_mostra_items as $mostra):
+                  $mostra_title = $mostra['title'] ?? '';
+                  ?>
+                  <div class="swiper-slide category-name">
+                    <a href="javascript:;"><?php echo $mostra_title ?></a></div>
+                <?php endforeach; ?>
+              </div>
             </div>
           </div>
         </div>
