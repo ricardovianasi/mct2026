@@ -43,7 +43,7 @@ host('159.203.111.152')
   ->set('identity_file', '~/.ssh/id_rsa')
   ->set('deploy_path', '/var/www/html/{{application}}');
 
-host('167.172.17.179')
+host('167.172.235.46')
   ->set('remote_user', 'root')
   ->set('identity_file', '~/.ssh/id_rsa')
   ->set('deploy_path', '/var/www/html/{{application}}');

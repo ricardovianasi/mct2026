@@ -130,8 +130,12 @@ $tribute-gap: 24px;
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 40px 24px;
-    gap: 24px;
+    padding: 30px 24px;
+    gap: 18px;
+
+    p {
+      font-size: 14px;
+    }
 
     h3 {
       font-size: 24px;
