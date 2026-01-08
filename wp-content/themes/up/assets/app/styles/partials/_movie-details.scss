@@ -85,7 +85,7 @@
       font-style: normal;
       font-weight: 700;
       line-height: 140%;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
       margin-top: 0;
       text-transform: uppercase;
     }
@@ -177,9 +177,11 @@
       row-gap: 8px;
     }
 
-    .ltr {
-      flex-direction: row !important;
-      gap: 4px;
+    .credits-wrapper {
+      div {
+        flex-direction: row !important;
+        gap: 4px;
+      }
     }
   }
 

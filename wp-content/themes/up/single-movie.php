@@ -87,7 +87,7 @@ $prog_items = get_posts([
 $prog_per_days = [];
 foreach ($prog_items as $prog) {
   $start = get_field('prog_start', $prog);
-  $start_date_time = \DateTime::createFromFormat('d/m/Y H:i:s', $start);
+  $start_date_time = DateTime::createFromFormat('d/m/Y H:i:s', $start);
   $prog_per_days[$start_date_time->format('Ymd')]['items'][] = $prog;
   $prog_per_days[$start_date_time->format('Ymd')]['start_date_time'] = $start_date_time;
 }
@@ -246,7 +246,7 @@ if ($available) {
 
                         $prog_real_date = $prog_date;
                         if (!$prog_real_date) {
-                          $prog_start_date_time_obj = \DateTime::createFromFormat('d/m/Y H:i:s', $prog_start);
+                          $prog_start_date_time_obj = DateTime::createFromFormat('d/m/Y H:i:s', $prog_start);
                           $prog_real_date = date_i18n('d/m \| l \| H:i', $prog_start_date_time_obj->getTimestamp());
                           $prog_real_date = str_replace('-feira', '', $prog_real_date);
                         }
@@ -298,7 +298,7 @@ if ($available) {
 
               <div>
                 <h3>Créditos</h3>
-                <div>
+                <div class="credits-wrapper">
                   <?php if (!empty($producao)): ?><p><strong><?php echo __('Produção', 'up') ?>
                     :</strong> <?php echo $producao ?></p><?php endif; ?>
                   <?php if (!empty($roteiro)): ?><p><strong><?php echo __('Roteiro', 'up') ?>
